@@ -72,3 +72,13 @@
 
 ## then we need to create ingress so that other people can see our website
 ## kubectl get ingress -n {namespace}
+
+
+## establish a trust relationship between your AWS account and an external identity provider (IdP) that supports OpenID Connect.
+## eksctl utils associate-iam-oidc-provider --cluster {clusterName} --approve
+
+## ALB Controller
+## Download IAM policy from command 
+## curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
+## Or download from my git file iam_policy.json
+
