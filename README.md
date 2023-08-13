@@ -81,6 +81,7 @@ Make sure you have the following tools installed:
     curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
     ```
 Or download from my git file iam_policy.json
+
 2. Create IAM Policy
     ```sh
     aws iam create-policy \
