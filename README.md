@@ -36,7 +36,7 @@ Make sure you have the following tools installed:
 3. Download kubeconfig file:
    ```shell
    aws eks update-kubeconfig --name {clusterName} --region {region}
-    ```
+   ```
 
 
 # Actual Deployment
