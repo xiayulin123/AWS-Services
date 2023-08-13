@@ -24,4 +24,16 @@
 
 ## View eksctl download instructions in https://github.com/eksctl-io/eksctl/blob/main/README.md#installation
 
-# 
+# Install AWS CLI
+
+## View AWS CLI install documents in https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+# Install Helm
+
+## Linux
+
+### $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+### $ chmod 700 get_helm.sh
+### $ ./get_helm.sh
+
+## Or view Helm install documents in https://helm.sh/docs/intro/install/
