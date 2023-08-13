@@ -35,7 +35,7 @@ Make sure you have the following tools installed:
 ## 🛠️ Setup Steps
 
 1. Configure AWS credentials and region:
-    ```sh
+   ```sh
    aws configure
    ```
 2. Create an EKS cluster:
