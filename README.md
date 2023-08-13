@@ -28,95 +28,111 @@ Make sure you have the following tools installed:
 1. Configure AWS credentials and region:
    ```shell
    aws configure
+   ```
+2. Create an EKS cluster:
+   ```shell
+   eksctl create cluster --name {clusterName} --region {region} --fargate
+   ```
+3. Download kubeconfig file:
+   ```shell
+   aws eks update-kubeconfig --name {clusterName} --region {region}
+    ```
 
-
-# To begin:
-
-## First: cmd aws configure 
-## set up access key and region, output
-
-## second step: to start to create a cluster 
-## eksctl create cluster --name {clusterName} --region {region} --fargate
-## after you see cmd says: "EKS cluster {clusterName} in {region} is ready, means your cluster has been created successfully and you can see your cluster in aws EKS
-
-## third: download cubeconfig file get cubeCTL command line
-## aws eks update-kubeconfit --name {clusterName} --region {region}
 
 # Actual Deployment
 
-## 1. to create fargateprofile
-## eksctl create fargateprofile \
-##    --cluster {clusterName} \
-##   --region {region} \
-##   --name {name} \
-##   --namespace {namespace}
-## if it's finished you can see created Fargate profile {name} on EKS cluster {clusterName}
+## 1. Create Fargate Profile
+    ```shell
+    eksctl create fargateprofile \
+        --cluster {clusterName} \
+        --region {region} \
+        --name {name} \
+        --namespace {namespace}
+    ```
 
-## deploy the file of game 2048 that have all the configuration related to deployment service and ingress
-## kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
+## 2. deploy the file of game 2048 that have all the configuration related to deployment service and ingress
+    ```shell
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
+    ```
 
+## 3. check if the deployments are running
+    ```shell
+    kubectl get pods -n {namespace}
+    ```
 
-## check if the deployments are running
-## kubectl get pods -n {namespace}
+## 4. after every pod are running, we can check the service 
+    ```shell
+    kubectl get svc -n {namespace}
+    ```
 
-## after every pod are running, we can check the service 
-## kubectl get svc -n {namespace}
+## 5. then we need to create ingress so that other people can see our website
+    ```shell
+    kubectl get ingress -n {namespace}
+    ```
 
-## then we need to create ingress so that other people can see our website
-## kubectl get ingress -n {namespace}
-
-
-## establish a trust relationship between your AWS account and an external identity provider (IdP) that supports OpenID Connect.
-## eksctl utils associate-iam-oidc-provider --cluster {clusterName} --approve
-
-## ALB Controller
-## Download IAM policy from command 
-## curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
+## 6. establish a trust relationship between your AWS account and an external identity provider (IdP) that supports OpenID Connect.
+    ```shell
+    eksctl utils associate-iam-oidc-provider --cluster {clusterName} --approve
+    ```
+# ALB Controller
+## 1. Download IAM policy from command 
+    ```shell
+    curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
+    ```
 ## Or download from my git file iam_policy.json
 
-## create IAM policy using the IAM policy file
-## aws iam create-policy \
-##    --policy-name {policyName} \
-##    --policy-document file://iam_policy.json
+## 2. create IAM policy using the IAM policy file
+    ```shell
+    aws iam create-policy \
+    --policy-name {policyName} \
+    --policy-document file://iam_policy.json
+    ```
 
-## create the IAM role by going to AWS IAM, go into Access management -> Roles -> create the Role -> AWS account -> next -> select {policyName} -> next -> create role name and create role
+## 3. create the IAM role by going to AWS IAM, go into Access management -> Roles -> create the Role -> AWS account -> next -> select {policyName} -> next -> create role name and create role
 
 ## or do it in cmd:
-## eksctl create iamserviceaccount \
-##   --cluster={your-aws-account-id}\
-##   --namespace= kube-system\
-##   --name= aws-load-balancer-controller \
-##   --role-name {roleName} \
-##  --attach-policy-arn=arn:aws:iam::{your-aws-account-id}:policy/{policyName} \
-##   --approve
-
+```shell
+ eksctl create iamserviceaccount \
+   --cluster={your-aws-account-id}\
+   --namespace= kube-system\
+   --name= aws-load-balancer-controller \
+   --role-name {roleName} \
+  --attach-policy-arn=arn:aws:iam::{your-aws-account-id}:policy/{policyName} \
+   --approve
+```
 ## if there is an error try it one more time
 
-## to create controller 
-## add helm repo
-## helm repo add eks https://aws.github.io/eks-charts
-## helm repo update eks
-
-## install aws controller
-## helm install aws-load-balancer-controller eks aws-load-balancer-controller -n kube-system \
-##   --set clusterName={clusterName} \
-##   --set serviceAccount.create=false \
-##   --set serviceAccount.name=aws-load-balancer-controller \
-##   --set region={region} \
-##   --set vpcId={your-vpc-id}
-## vpc id is in your AWS EKS -> networking
-
-## check the deployment
-## kubectl get deployment -n kube-system aws-load-balancer-controller
-
+# create controller 
+## 1. add helm repo
+```shell
+helm repo add eks https://aws.github.io/eks-charts
+helm repo update eks
+```
+## 2. install aws controller
+```shell
+ helm install aws-load-balancer-controller eks aws-load-balancer-controller -n kube-system \
+   --set clusterName={clusterName} \
+   --set serviceAccount.create=false \
+   --set serviceAccount.name=aws-load-balancer-controller \
+   --set region={region} \
+   --set vpcId={your-vpc-id}
+ vpc id is in your AWS EKS -> networking
+```
+## 3. check the deployment
+```shell
+ kubectl get deployment -n kube-system aws-load-balancer-controller
+```
 ## wait until 2 deployments are all running
 
-## Last check pods you can see the load balancer is running
-## kubectl get pods -n kube-system
-
-## Right Now your deployment is finished, you can go to AWS Load Balancer 
+# Last check pods you can see the load balancer is running
+```shell
+ kubectl get pods -n kube-system
+```
+# Right Now your deployment is finished, you can go to AWS Load Balancer 
 ## to check the address
-## kubectl get ingress -n {namespace}
+```shell
+ kubectl get ingress -n {namespace}
+```
 ## the ADDRESS is the url you can visit in the internet
 
 
