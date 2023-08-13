@@ -2,8 +2,6 @@
 # Hi, here is the pipeline of deploying a 2048 small game into EKS in AWS
 
 
-
-
 # Prerequisites (make sure you have kubectl eksctl AWS CLI helm installed if you have already installed skip this part)
 
 # Install kubectl
