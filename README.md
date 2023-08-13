@@ -84,5 +84,7 @@
 
 ## create IAM policy using the IAM policy file
 ## aws iam create-policy \
-##    --policy-name AWSLoadBalancerControllerIAMPolicy \
+##    --policy-name {policyName} \
 ##    --policy-document file://iam_policy.json
+
+## create the IAM role by going to AWS IAM, go into Access management -> Roles search {policyName} and create the Role
