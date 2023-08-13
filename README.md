@@ -87,4 +87,15 @@
 ##    --policy-name {policyName} \
 ##    --policy-document file://iam_policy.json
 
-## create the IAM role by going to AWS IAM, go into Access management -> Roles search {policyName} and create the Role
+## create the IAM role by going to AWS IAM, go into Access management -> Roles -> create the Role -> AWS account -> next -> select {policyName} -> next -> create role name and create role
+
+## or do it in cmd:
+## eksctl create iamserviceaccount \
+##   --cluster={your-aws-account-id}\
+##   --namespace= kube-system\
+##   --name= aws-load-balancer-controller \
+##   --role-name {roleName} \
+##  --attach-policy-arn=arn:aws:iam::{your-aws-account-id}:policy/{policyName} \
+##   --approve
+
+## if there is an error try it one more time
