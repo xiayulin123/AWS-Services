@@ -82,3 +82,7 @@
 ## curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
 ## Or download from my git file iam_policy.json
 
+## create IAM policy using the IAM policy file
+## aws iam create-policy \
+##    --policy-name AWSLoadBalancerControllerIAMPolicy \
+##    --policy-document file://iam_policy.json
