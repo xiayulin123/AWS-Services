@@ -116,3 +116,18 @@
 
 ## check the deployment
 ## kubectl get deployment -n kube-system aws-load-balancer-controller
+
+## wait until 2 deployments are all running
+
+## Last check pods you can see the load balancer is running
+## kubectl get pods -n kube-system
+
+## Right Now your deployment is finished, you can go to AWS Load Balancer 
+## to check the address
+## kubectl get ingress -n {namespace}
+## the ADDRESS is the url you can visit in the internet
+
+
+
+## END
+## Remember Delete everything you just created after you finished, Because it will cost a lot!!!!!!
