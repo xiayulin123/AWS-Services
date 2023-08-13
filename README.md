@@ -116,7 +116,7 @@ If there is an error, try it again.
 ```
 wait until 2 deployments are all running
 
-# Last check pods you can see the load balancer is running
+## Last check pods you can see the load balancer is running
 ```shell
  kubectl get pods -n kube-system
 ```
