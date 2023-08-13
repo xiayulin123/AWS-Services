@@ -16,11 +16,11 @@ Make sure you have the following tools installed:
   - View installation documents: [AWS CLI Install Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - Helm
   - Linux:
-    ```shell
+```shell
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
     chmod 700 get_helm.sh
     ./get_helm.sh
-    ```
+```
   - View Helm installation guide: [Helm Install Guide](https://helm.sh/docs/intro/install/)
 
 ## Setup
@@ -43,50 +43,50 @@ Make sure you have the following tools installed:
 
 ## 1. Create Fargate Profile
 ```shell
-        eksctl create fargateprofile \
-            --cluster {clusterName} \
-            --region {region} \
-            --name {name} \
-            --namespace {namespace}
+eksctl create fargateprofile \
+    --cluster {clusterName} \
+    --region {region} \
+    --name {name} \
+    --namespace {namespace}
 ```
 
 ## 2. deploy the file of game 2048 that have all the configuration related to deployment service and ingress
-    ```shell
+```shell
     kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
-    ```
+```
 
 ## 3. check if the deployments are running
-    ```shell
+```shell
     kubectl get pods -n {namespace}
-    ```
+```
 
 ## 4. after every pod are running, we can check the service 
-    ```shell
+```shell
     kubectl get svc -n {namespace}
-    ```
+```
 
 ## 5. then we need to create ingress so that other people can see our website
-    ```shell
+```shell
     kubectl get ingress -n {namespace}
-    ```
+```
 
 ## 6. establish a trust relationship between your AWS account and an external identity provider (IdP) that supports OpenID Connect.
-    ```shell
+```shell
     eksctl utils associate-iam-oidc-provider --cluster {clusterName} --approve
-    ```
+```
 # ALB Controller
 ## 1. Download IAM policy from command 
-    ```shell
+```shell
     curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
-    ```
+```
 ## Or download from my git file iam_policy.json
 
 ## 2. create IAM policy using the IAM policy file
-    ```shell
+```shell
     aws iam create-policy \
     --policy-name {policyName} \
     --policy-document file://iam_policy.json
-    ```
+```
 
 ## 3. create the IAM role by going to AWS IAM, go into Access management -> Roles -> create the Role -> AWS account -> next -> select {policyName} -> next -> create role name and create role
 
