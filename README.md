@@ -42,13 +42,13 @@ Make sure you have the following tools installed:
 # Actual Deployment
 
 ## 1. Create Fargate Profile
-    ```shell
+```shell
         eksctl create fargateprofile \
             --cluster {clusterName} \
             --region {region} \
             --name {name} \
             --namespace {namespace}
-    ```
+```
 
 ## 2. deploy the file of game 2048 that have all the configuration related to deployment service and ingress
     ```shell
