@@ -60,9 +60,15 @@
 ##   --namespace {namespace}
 ## if it's finished you can see created Fargate profile {name} on EKS cluster {clusterName}
 
-## deploy the file of 2048 that have all the configuration related to deployment service and ingress
+## deploy the file of game 2048 that have all the configuration related to deployment service and ingress
 ## kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/examples/2048/2048_full.yaml
 
 
 ## check if the deployments are running
-## kubectl get pods -n game-2048
+## kubectl get pods -n {namespace}
+
+## after every pod are running, we can check the service 
+## kubectl get svc -n {namespace}
+
+## then we need to create ingress so that other people can see our website
+## kubectl get ingress -n {namespace}
