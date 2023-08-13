@@ -99,3 +99,20 @@
 ##   --approve
 
 ## if there is an error try it one more time
+
+## to create controller 
+## add helm repo
+## helm repo add eks https://aws.github.io/eks-charts
+## helm repo update eks
+
+## install aws controller
+## helm install aws-load-balancer-controller eks aws-load-balancer-controller -n kube-system \
+##   --set clusterName={clusterName} \
+##   --set serviceAccount.create=false \
+##   --set serviceAccount.name=aws-load-balancer-controller \
+##   --set region={region} \
+##   --set vpcId={your-vpc-id}
+## vpc id is in your AWS EKS -> networking
+
+## check the deployment
+## kubectl get deployment -n kube-system aws-load-balancer-controller
