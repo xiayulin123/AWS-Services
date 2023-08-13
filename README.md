@@ -25,7 +25,7 @@ Make sure you have the following tools installed:
   - Installation documents: [AWS CLI Install Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 - **Helm**
   - Linux:
-        ```sh
+    ```sh
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
     chmod 700 get_helm.sh
     ./get_helm.sh
@@ -35,20 +35,20 @@ Make sure you have the following tools installed:
 ## 🛠️ Setup Steps
 
 1. Configure AWS credentials and region:
-       ```sh
+    ```sh
    aws configure
    ```
 2. Create an EKS cluster:
-        ```sh
+    ```sh
     eksctl create cluster --name {clusterName} --region {region} --fargate
     ```
 3. Download kubeconfig file:
-        ```sh
+    ```sh
     aws eks update-kubeconfig --name {clusterName} --region {region}
     ```
 ## Actual Deployment 
 1. Create Fargate Profile
-        ```sh
+    ```sh
     eksctl create fargateprofile \
     --cluster {clusterName} \
     --region {region} \
