@@ -8,15 +8,15 @@ Make sure you have the following tools installed:
 
 - **kubectl**
   - Linux: 
-        ```sh
+    ```sh
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
     ```
   - MacOS: 
-        ```sh
+    ```sh
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
     ```
   - Windows: 
-        ```sh
+    ```sh
     curl.exe -LO "https://dl.k8s.io/release/v1.27.4/bin/windows/amd64/kubectl.exe"
     ```
 - **eksctl**
