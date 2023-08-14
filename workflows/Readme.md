@@ -10,7 +10,7 @@
 
 <p>3. start writing yml</p>
 
-<h2>🍰 Contribution Guidelines:</h2>
+<h2>🍰Guidelines:</h2>
 
 ```name: Example workflow
 on: push #wheneven someone push 
@@ -28,5 +28,45 @@ jobs:
           node -v
           npm -v
 ```
+<h2>Instructions to use workflow to upload Docker Image to ECR</h2>
 
+```name: Deploy
+on:
+  push:
+  #only pushed on branch main will start workflow
+    branches: [ main ]
+jobs:
+  build:
+    name: Build Image
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+
+      #you can either go to Settings beside Insights -> Secrets and variables -> actions -> New repository secret
+      
+      #or just type it here
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+
+        #name of ECR repo
+        ECR_REPOSITORY: example_repo
+
+        #Image tag
+        IMAGE_TAG: example_IMAGE
+      run: |-
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+```
 # written by Yulin Xia
