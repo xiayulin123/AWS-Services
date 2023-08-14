@@ -3,7 +3,7 @@ on: push #wheneven someone push
 
 jobs: 
   run-script:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: echo a name
         run: echo "I am from Github Actions"
