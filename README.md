@@ -133,7 +133,7 @@ wait until 2 deployments are all running
 ## END
 ## Remember Delete everything you just created after you finished, Because it will cost a lot!!!!!!
   ```sh
-  gcloud container clusters delete CLUSTER_NAME --zone ZONE
+  eksctl delete cluster --name {clusterName}
   ```
 
 #DEMO
