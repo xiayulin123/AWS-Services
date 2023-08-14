@@ -12,7 +12,7 @@
 
 <h2>🍰 Contribution Guidelines:</h2>
 
-<h2>name: Example workflow
+```name: Example workflow
 on: push #wheneven someone push 
 
 jobs: 
@@ -27,6 +27,6 @@ jobs:
           echo "printing versions of npm and node"
           node -v
           npm -v
-          </h2>
+```
 
 # written by Yulin Xia
