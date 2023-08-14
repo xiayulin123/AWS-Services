@@ -132,6 +132,9 @@ wait until 2 deployments are all running
 
 ## END
 ## Remember Delete everything you just created after you finished, Because it will cost a lot!!!!!!
+  ```sh
+  gcloud container clusters delete CLUSTER_NAME --zone ZONE
+  ```
 
 #DEMO
 ![demo](https://github.com/xiayulin123/EKS-2048/assets/113715923/4f9fc9d7-e4fc-4d6b-a398-5e5c98276e38)
