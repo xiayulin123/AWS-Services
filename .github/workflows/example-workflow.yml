@@ -3,6 +3,7 @@ on: push #wheneven someone push
 
 jobs: 
   run-script:
+  #define which machine will run
     runs-on: ubuntu-latest
     steps:
       - name: echo a name
