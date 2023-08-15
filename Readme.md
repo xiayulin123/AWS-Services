@@ -9,24 +9,25 @@
 
 🚀 **Deployment Steps:**
 
-Click[https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment]
+[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)
 
 ## s3-LambdaFunction
 ### Service: Amazon S3 & Lambda
 
 🔗 **Set Up Interaction:**
-Click[https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction]
+
+[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction)
 
 ## Workflows
 ### Service: Amazon ECR
 
 🔄 **Configure Workflows:**
 
-Click[https://github.com/xiayulin123/AWS-Services/tree/main/workflows]
+[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/workflows)
 
 ## simpleMath
 ### Service: AWS Amplify, DynamoDB, API Gateway, Lambda
 
 🔢 **Perform Simple Math Operations:**
 
-Click[https://github.com/xiayulin123/AWS-Services/tree/main/simpleMath]
+[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/simpleMath)
