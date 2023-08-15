@@ -13,9 +13,11 @@ Run time can be python or language that you want
 You can edit Test configuration and test your code
 ```
 
+![Lambda](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/Lambda.png)
+
 <p>3. Use API Gateway to build method connect to Lambda Function</p>
 
-[api gateway](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/APIGATEWAY.png)
+![api gateway](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/APIGATEWAY.png)
 
 ```
 When creating Lambda Function method remeber set the correct Lambda Function
@@ -33,9 +35,12 @@ set New Stage -> set Name
 
 <p>7. Go to DynamoDB and create a table</p>
 
+
 ```
 Copy the ARN for your table
 ```
+
+![DynamoDB](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/DynamoDB.png)
 
 <p>8. Go back to Lambda Function and go to Configuration</p>
 
@@ -64,6 +69,9 @@ Click on Permission
     ]
  }
 ```
+
+![Role](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/Role.png)
+
 
 <p>10. Go to Lambda Function Code paste your DynamoDB ARN</p>
 
@@ -100,5 +108,8 @@ def lambda_handler(event, context):
 
 <p>13. Deploy the zipped static file into Ampliy Or connect to github and Set Up Build and Deploy Settings in Amplify</p>
 
+![Amplify](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/Amplify.png)
 
 <p>14. Now you finished</p>
+
+![Lambda](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/demo.png)
