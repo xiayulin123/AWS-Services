@@ -18,11 +18,22 @@ jobs:
     - name: Login to Amazon ECR
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
-    - name: Build, tag, and push image to Amazon ECR
+    - name: Check if image tag exists
+      id: check-image-tag
+      run: |
+        aws ecr describe-images --repository-name example_repo --image-ids imageTag=example_IMAGE > /dev/null 2>&1
+        IMAGE_TAG_EXISTS=$?
+        echo "Image Tag Exists: $IMAGE_TAG_EXISTS"
+        echo "::set-output name=image-tag-exists::$IMAGE_TAG_EXISTS"
+    - name: Build and push image to Amazon ECR
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: example_repo
         IMAGE_TAG: example_IMAGE
-      run: |-
+      run: |
+        if [[ "${{ steps.check-image-tag.outputs.image-tag-exists }}" == "0" ]]; then
+          # Replace existing image
+          aws ecr batch-delete-image --repository-name $ECR_REPOSITORY --image-ids imageTag=$IMAGE_TAG
+        fi
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
