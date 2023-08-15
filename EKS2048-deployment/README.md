@@ -136,9 +136,9 @@ wait until 2 deployments are all running
   eksctl delete cluster --name {clusterName}
   ```
 
-#DEMO
+# DEMO
 ![demo](https://github.com/xiayulin123/EKS-2048/assets/113715923/4f9fc9d7-e4fc-4d6b-a398-5e5c98276e38)
-##AWS configure
+## AWS configure
 ![cluster](https://github.com/xiayulin123/EKS-2048/assets/113715923/bd6023d9-2f61-4c0f-9e38-b4f77ebcfe36)
 ![loadbalancer](https://github.com/xiayulin123/EKS-2048/assets/113715923/dc0a365e-a2a9-453a-a18e-b502dcd543df)
 ![vpc](https://github.com/xiayulin123/EKS-2048/assets/113715923/1e2ddc2b-ef83-4991-bb2d-32ef60efe4b7)
