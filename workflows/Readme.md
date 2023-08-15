@@ -12,7 +12,8 @@
 
 <h2>🍰Guidelines:</h2>
 
-```name: Example workflow
+```
+name: Example workflow
 on: push #wheneven someone push 
 
 jobs: 
@@ -30,7 +31,8 @@ jobs:
 ```
 <h2>Instructions to use workflow to upload Docker Image to ECR</h2>
 
-```name: Deploy
+```
+name: Deploy
 on:
   push:
   #only pushed on branch main will start workflow
