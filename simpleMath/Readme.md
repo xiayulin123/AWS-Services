@@ -14,7 +14,9 @@ You can edit Test configuration and test your code
 ```
 
 <p>3. Use API Gateway to build method connect to Lambda Function</p>
+
 [api gateway](https://github.com/xiayulin123/AWS-Services/blob/main/simpleMath/APIGATEWAY.png)
+
 ```
 When creating Lambda Function method remeber set the correct Lambda Function
 ```
