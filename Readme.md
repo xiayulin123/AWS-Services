@@ -4,7 +4,7 @@
 
 ---
 
-## Deploy 2048 to EKS
+## Deploy game 2048 to EKS
 ### Service: Amazon EKS
 
 🚀 **Deployment Steps:**
