@@ -34,3 +34,10 @@ Enable the Jenkins service to start at boot:
 Start Jenkins as a service:
 
 [ec2-user ~]$ sudo systemctl start jenkins
+
+If you are finished check:
+$javac --version
+javac .....
+
+$systemctl status jenkins
+running...
