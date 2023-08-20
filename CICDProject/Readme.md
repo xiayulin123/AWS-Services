@@ -1,10 +1,50 @@
-Using Jenkins maven ansible and kuburnetes
+<h2>Here are the CICD steps that this project will go through </h2>
 
-CI:
-changes in github repo -> initiate the job trigger -> Jenkins pull the code from repo ->
-build the artifact using maven -> push the artifact to ansible server -> create docker image using artifact -> copy the docker image to docker hub
+<h2>🛠️ CI Steps:</h2>
 
--> trigger the CD job
+<p>1. changes in github repo</p>
 
-CD:
-boost server pull docker image from dockerhub -> build container for kubernetes -> finished
+<p>2. initiate the job trigger</p>
+
+<p>3. Jenkins pull the code from repo</p>
+
+<p>4. build the artifact using maven</p>
+
+<p>5. push the artifact to ansible server</p>
+
+<p>6. create docker image using artifact</p>
+
+<p>7. copy the docker image to docker hub</p>
+
+<h2> Continue to CD Steps </h2>
+
+<p>1. boost server pull docker image from dockerhub</p>
+
+<p>2. build container for kubernetes</p>
+
+<p>3. finished</p>
+
+<h2> To see details please click link below or head into Jenkins folder </h2>
+
+## [Continue to the details](https://github.com/xiayulin123/AWS-Services/tree/main/CICDProject/Jenkins)
+
+# Demo
+
+## Project
+
+## JenkinsCD
+
+## JenkinsCI
+
+## EC2 final look
+
+## EKS final look
+
+## Dockerhub final look
+
+## EKSBootRole
+
+## JenkinsDashBoard
+
+## all k8s service
+
