@@ -17,32 +17,32 @@
 
 **Full Steps:**
 
-[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/CICDProject)
+[✈️ GO](https://github.com/xiayulin123/AWS-Services/tree/main/CICDProject)
 
 ## EKS deploy 2048
 ### Tech: Amazon EKS
 
  **Deployment Steps:**
 
-[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)
+[✈️ GO](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)
 
 ## s3-LambdaFunction
 ### Tech: Amazon S3 & Lambda
 
 🔗 **Set Up Interaction:**
 
-[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction)
+[✈️ GO](https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction)
 
 ## Workflows
 ### Tech: Amazon ECR
 
 🔄 **Configure Workflows:**
 
-[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/workflows)
+[✈️ GO](https://github.com/xiayulin123/AWS-Services/tree/main/workflows)
 
 ## simpleMath
 ### Tech: AWS Amplify, DynamoDB, API Gateway, Lambda
 
 🔢 **Perform Simple Math Operations:**
 
-[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/simpleMath)
+[✈️ GO](https://github.com/xiayulin123/AWS-Services/tree/main/simpleMath)
