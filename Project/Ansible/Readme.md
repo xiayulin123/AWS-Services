@@ -49,3 +49,66 @@ ls ~/.ssh
 
 ##you should see id_rsa.pub and id_rsa
 ```
+12. install ansible
+```
+sudo su
+amazon-linux-extras install ansible2
+
+##check
+ansible --version
+
+```
+13. Integrate ansible with Jenkins
+Jenkins Dashboard ->  manage Jenkins -> system ->  publish over SSH(plug in) -> Add SSH Server -> Name: {ansible server name} Hostname: {ansible server public ip address} Username: {user} -> Advanced -> mark Use password authentication -> Password: {password} -> apply -> Test configuration (if is success) ->  save
+
+14. Go to Ancible server, create a Docker dir
+```
+cd /opt
+
+sudo mkdir Docker
+
+sudo chown {user}:{user} Docker
+## give {user} permmision to access Docer so that Jenkins can modify and change Docker file
+## you can check with command ll
+
+
+```
+
+15. Go to Jenkins -> create new item -> {item name}, Maven project -> Git repository URL (enter your github repo URL) -> branch: {branch} -> Build Goals and options: clean install -> Post-build Actions    Add post-build action: Send build artifact over SSH -> Server name: {ansible server name}, source file: /path/to/your/*.war, Remove prefix: /path/to/your -> apply -> save
+
+16. go to configure -> Remote directory: //opt//Docker -> apply -> save
+
+17. click on the Item you create just now -> Build Now
+
+18. check the console output if it's success by the end
+
+19. go to ansible server
+```
+ls Docker/
+
+## your should see {your file}.war
+## your jenkins has successfully connect with your ansible server
+## the artifacts is successfully published into your ansible server
+```
+
+20. configure and install Docker
+```
+sudo yum install docker
+
+sudo usermod -aG docker {user}
+## to add {user} to docker group, give access to docker
+## you can check with id {user}
+
+sudo service docker start
+
+service docker status(check if running)
+
+sudo init 6
+## reboot
+
+sudo service docker start
+sudo su - {user}
+cd /opt/Docker
+
+vim Dockerfile
+```
