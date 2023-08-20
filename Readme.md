@@ -4,16 +4,16 @@
 <h2>🧐 Projects </h2>
 
 
-<h3> EKS deploy 2048 </h3>  
+<h3>  🚀 [EKS deploy 2048] </h3>  
 <h3>  Connection between S3 and Lambda function</h3>  
 <h3>  Simple Math</h3>  
 <h3>  CICD Project</h3>  
----
+
 
 ## Deploy game 2048 to EKS
 ### Service: Amazon EKS
 
-🚀 **Deployment Steps:**
+ **Deployment Steps:**
 
 [Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)
 
