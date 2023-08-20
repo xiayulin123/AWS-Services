@@ -1,0 +1,12 @@
+---
+- hosts: kubernetes
+  user: root
+
+  tasks:
+    - name: deploy app on kubernets
+      command: kubectl apply -f deployment.yml
+    - name: create service
+      command: kubectl apply -f service.yml
+
+    - name: restart deployment if docker hub image has been changed
+      command: kubectl rollout restart deployment.apps/{image name}
