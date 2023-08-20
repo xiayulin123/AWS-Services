@@ -1,7 +1,7 @@
 <div align="center">
   <h1>AWS Services Projects</h1>
 </div>
-<h2>🧐 Projects </h2>
+# 🧐 Projects
 
 
 ##  🚀 [EKS deploy 2048](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)  
