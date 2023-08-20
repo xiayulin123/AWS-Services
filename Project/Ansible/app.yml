@@ -1,0 +1,13 @@
+---
+- hosts: ansible
+  tasks:
+  - name: create docker image
+    command: docker build -t {your file name}:latest
+    args:
+      chdir: /opt/Docker
+
+  - name: create the tag for image
+    command: docker tag {your file name}:latest {username of your docker hub}/{your file name}:latest
+
+  - name: push docker image
+    command: docker push {username of your docker hub}/{your file name}:latest

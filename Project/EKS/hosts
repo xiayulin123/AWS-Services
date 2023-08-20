@@ -1,0 +1,5 @@
+[ansible]
+{your ansible server private ip address}
+
+[kuburnetes]
+{your EKS server private ip address}
