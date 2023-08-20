@@ -111,4 +111,38 @@ sudo su - {user}
 cd /opt/Docker
 
 vim Dockerfile
+## use dockerfile in repo
+
+sudo vim /etc/ansible/hosts
+
+## delete all files
+
+ssh-copy-id {your ansible server private ip address}
+## so that ansible Playbook can connect to localhost
+## so it can access docker on localhost
+enter the password: {password}
+
+
+vim {file name}.yml
+## look at app.yml in repo
+
+docker login
+## connect to your docker hub
+
+ansible-playbook {file name}.yml --check
+## check if ansible playbook can run properly
+
+ansible-playbook {file name}.yml
+
+docker images
+## your will see the {your file name} docker image has been created
+## and your docker hub is also added your docker image
+
+
 ```
+
+21. Update Jenkins Job
+
+22. go to jenkins -> configure -> post-build actions -> exec command: ansible-playbook /opt/Docker/{file name}.yml -> apply -> save
+
+Next -> EKS folder

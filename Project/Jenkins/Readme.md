@@ -62,3 +62,5 @@ sudo su
 yum install git
 ```
 19. since now it has successfully set up, you can create item to test maven build
+
+Next -> Ansible folder
