@@ -4,36 +4,45 @@
 <h2>🧐 Projects </h2>
 
 
-<h3>  🚀 [EKS deploy 2048] </h3>  
-<h3>  Connection between S3 and Lambda function</h3>  
-<h3>  Simple Math</h3>  
-<h3>  CICD Project</h3>  
+##  🚀 [EKS deploy 2048](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)  
+##  🔗[Connection between S3 and Lambda function](https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction)  
+##  🔢[Simple Math](ttps://github.com/xiayulin123/AWS-Services/tree/main/simpleMath)
+##  🔄[workflow Explaination](https://github.com/xiayulin123/AWS-Services/tree/main/workflows)
+##  📚[Full CICD Project](https://github.com/xiayulin123/AWS-Services/tree/main/CICDProject)
 
+<h2>💻 Intro</h2>
 
-## Deploy game 2048 to EKS
-### Service: Amazon EKS
+## Full CICD Project
+### Tech: Amazon EKS, EC2, IAM, Jenkins, docker hub, Ansible
+
+**Full Steps:**
+
+[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/CICDProject)
+
+## EKS deploy 2048
+### Tech: Amazon EKS
 
  **Deployment Steps:**
 
-[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)
+[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/EKS2048-deployment)
 
 ## s3-LambdaFunction
-### Service: Amazon S3 & Lambda
+### Tech: Amazon S3 & Lambda
 
 🔗 **Set Up Interaction:**
 
-[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction)
+[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/s3-LambdaFunction)
 
 ## Workflows
-### Service: Amazon ECR
+### Tech: Amazon ECR
 
 🔄 **Configure Workflows:**
 
-[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/workflows)
+[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/workflows)
 
 ## simpleMath
-### Service: AWS Amplify, DynamoDB, API Gateway, Lambda
+### Tech: AWS Amplify, DynamoDB, API Gateway, Lambda
 
 🔢 **Perform Simple Math Operations:**
 
-[Click to Access](https://github.com/xiayulin123/AWS-Services/tree/main/simpleMath)
+[✈️ ](https://github.com/xiayulin123/AWS-Services/tree/main/simpleMath)
