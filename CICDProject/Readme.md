@@ -34,25 +34,25 @@
 ![project](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/demo1.png)
 
 ## JenkinsDashBoard
-![JenkinsDashBoard](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/JenkinsDashboard.png
+![JenkinsDashBoard](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/JenkinsDashboard.png)
 
 ## JenkinsCD
-![JenkinsCD](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/JenkinsCDJob.png
+![JenkinsCD](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/JenkinsCDJob.png)
 
 ## JenkinsCI
-![JenkinsCI](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/JenkinsCIJob.png
+![JenkinsCI](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/JenkinsCIJob.png)
 
 ## EC2 final look
-![EC2 final look](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/AWSEC2.png
+![EC2 final look](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/AWSEC2.png)
 
 ## EKS final look
-![EKS final look](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/AWSEKS.png
+![EKS final look](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/AWSEKS.png)
 
 ## Dockerhub final look
-![Dockerhub final look](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/Dockerhub.png
+![Dockerhub final look](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/Dockerhub.png)
 
 ## EKSBootRole
-![EKSBootRole](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/EKSBootRole.png
+![EKSBootRole](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/EKSBootRole.png)
 
 ## all k8s service
-![all k8s service](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/allK8sServer.png
+![all k8s service](https://github.com/xiayulin123/AWS-Services/blob/main/CICDProject/allK8sServer.png)
